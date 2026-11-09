@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Panel de Sustentabilidad - EcoTech</title>
+</head>
+<body>
+    <h1>Panel de Sustentabilidad - EcoTech Solutions</h1>
+    
+    <!-- Mostramos las métricas globales calculadas -->
+    <p><strong>Total Global de Emisiones:</strong> {{ total_global_co2 }} kg de CO2</p>
+    <p><strong>Planta de Mayor Consumo:</strong> {{ planta_lider_consumo }}</p>
+
+    <h2>Historial por Planta Industrial</h2>
+    <ul>
+        <!-- Recorremos el listado completo usando las etiquetas de Django -->
+        {% for reg in listado_completo %}
+            <li>{{ reg.planta }}: {{ reg.consumo }} kWh</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
